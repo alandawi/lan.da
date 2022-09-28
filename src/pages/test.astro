@@ -1,0 +1,15 @@
+---
+import { SITE } from '~/config.mjs';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(),
+};
+---
+
+<Layout {meta}>
+	<div class="grid place-items-center h-screen">TEST PAGE</div>
+</Layout>

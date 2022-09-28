@@ -1,0 +1,24 @@
+<script is:inline>
+	function attachEvent(selector, event, fn) {
+		const matches = document.querySelectorAll(selector);
+		if (matches && matches.length) {
+			matches.forEach((elem) => {
+				elem.addEventListener(event, () => fn(elem), false);
+			});
+		}
+	}
+
+	window.onload = function () {
+		// https://www.w3schools.com/jsref/event_onload.asp
+
+		console.log('onload ready');
+
+		attachEvent('a.btn-download', 'click', function (elm) {
+			console.log('Download button clicked!');
+		});
+	};
+	window.onpageshow = function () {
+		// https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event
+		console.log('onpageshow ready');
+	};
+</script>
